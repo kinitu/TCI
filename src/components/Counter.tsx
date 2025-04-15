@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "../components/Container";
-import { Button } from "../components/Button";
+import Container from "../components/Container";
+import Button from "../components/Button";
 
 function Counter(){
   const [count, setCount] = useState<number>(0);
@@ -46,9 +46,9 @@ function Counter(){
           size="small"
           title="Изменить видимость"
           onClick={() => setIsVisible(!isVisible)}
-        >
-          Переключить видимость
-        </Button>
+        />
+          {/* Переключить видимость */}
+        {/* </Button> */}
 
         <h3>Список:</h3>
         <ul>

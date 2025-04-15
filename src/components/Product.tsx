@@ -6,10 +6,15 @@ function Product() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState<Prod[]>([]);
 
+    interface Prod{
+        Title: string;
+        Descript: string;
+        Price: string;
+    }
     const addProduct = () =>{
-        setProducts([...products, {
+        setProducts(prev => [...prev, {
             Title: title,
             Descript: description,
             Price: price
@@ -35,7 +40,7 @@ function Product() {
                 </div>
                 <Button size='small' color='secondary' title='Добавить' onClick={addProduct}/>
             </div>
-            <table class='table-auto w-2/5'>
+            <table className='table-auto w-2/5'>
                 <thead>
                     <tr>
                         <th className='bg-blue-500'>Название</th>
