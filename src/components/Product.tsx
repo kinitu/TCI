@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../components/Button';
 import Input from '../components/Input';
+import axios from "axios"
 
 function Product() {
     const [title, setTitle] = useState("");
@@ -19,6 +20,9 @@ function Product() {
             Descript: description,
             Price: price
         }]);
+        axios.post("http://localhost:5000/data",
+            {Title: title, Descript: description, Price: price})
+            .catch(error => {console.log(error)})
     };
 
     return(
